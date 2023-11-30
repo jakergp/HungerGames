@@ -8,6 +8,12 @@ public class Tributo {
     private  int agilidad;
     private  int popularidad;
 
+    public Tributo(String nombre, int distrito) {
+        this.nombre = nombre;
+        this.distrito = distrito;
+        this.vida = 100;
+    }
+
     public String getNombre() {
         return nombre;
     }
