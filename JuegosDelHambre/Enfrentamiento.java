@@ -3,6 +3,7 @@ package JuegosDelHambre;
 import Tributos.Tributo;
 import java.util.Random;
 public class Enfrentamiento implements Evento{
+
     Tributo tributo1, tributo2;
 
     public Enfrentamiento(Tributo tributo1, Tributo tributo2) {
