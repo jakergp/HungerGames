@@ -1,16 +1,18 @@
 package Tributos;
 
+import java.util.Random;
+
 public class Tributo {
 
-    private String nombre;
-    private int distrito;
-    private int vida;
-    private int popularidad;
-    private int agilidad;
-    private int inteligencia;
-    private int combate;
+    String nombre;
+    int distrito;
+    int vida;
+    int popularidad;
+    int agilidad;
+    int inteligencia;
+    int combate;
 
-    public Tributo(String nombre, int distrito, int popularidad) {
+    public Tributo(String nombre, int distrito) {
         Random random = new Random();
         this.nombre = nombre;
         this.distrito = distrito;
