@@ -4,8 +4,8 @@ public class Estratega implements Tributo{
 
     public Estratega (String nombre, int distrito) {
         Random random = new Random();
-        this.inteligencia = random.nextInt(10) + 1
-       
-    }
-    
+        this.agilidad = random.nextInt(4) + 2;
+        this.inteligencia = random.nextInt(2) + 9;
+        this.combate = random.nextInt(4) + 1;
+    }    
 }
