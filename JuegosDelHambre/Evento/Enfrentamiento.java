@@ -1,4 +1,4 @@
-package JuegosDelHambre;
+package JuegosDelHambre.Evento;
 
 import Tributos.Tributo;
 import java.util.Random;

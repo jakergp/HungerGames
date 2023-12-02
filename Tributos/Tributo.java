@@ -9,6 +9,7 @@ public class Tributo {
     private int agilidad;
     private int inteligencia;
     private int combate;
+    private State estado;
 
     public Tributo(String nombre, int distrito, int popularidad) {
         Random random = new Random();
@@ -35,10 +36,21 @@ public class Tributo {
 
     public int getVida() {
         return vida;
+        if (this.vida == 0) {
+            System.out.println("El tributo esta muerto");
+        }
     }
 
     public void setVida(int vida) {
-        this.vida = vida;
+        if (this.vida > 0) {
+            this.vida = vida;
+            if (this.vida > 100){
+                this.vida = 100; 
+            }
+        }
+        else {
+            System.out.println("ERROR. El tributo esta muerto");
+        }
     }
 
     public int getPopularidad() {
@@ -47,6 +59,12 @@ public class Tributo {
 
     public void setPopularidad(int popularidad) {
         this.popularidad = popularidad;
+        if (this.popularidad > 10){
+                this.popularidad = 10; 
+        }
+        else {
+            System.out.println("El numero debe ser entre 1 y 10");
+        }
     }
 
     public int getAgilidad() {
@@ -55,6 +73,12 @@ public class Tributo {
 
     public void setAgilidad(int agilidad) {
         this.agilidad = agilidad;
+        if (this.agilidad > 10){
+                this.agilidad = 10; 
+        }
+        else {
+            System.out.println("El numero debe ser entre 1 y 10");
+        }
     }
 
     public int getInteligencia() {
@@ -63,6 +87,12 @@ public class Tributo {
 
     public void setInteligencia(int inteligencia) {
         this.inteligencia = inteligencia;
+        if (this.inteligencia > 10){
+                this.inteligencia = 10; 
+        }
+        else {
+            System.out.println("El numero debe ser entre 1 y 10");
+        }
     }
 
     public int getCombate() {
@@ -71,5 +101,17 @@ public class Tributo {
 
     public void setCombate(int combate) {
         this.combate = combate;
+        if (this.combate > 10){
+                this.combate = 10; 
+        }
+        else {
+            System.out.println("El numero debe ser entre 1 y 10");
+        }
+    }
+
+
+    public void setState(State estado) {
+        this.estado = estado;
+        this.estado.setTributo(this);
     }
 }

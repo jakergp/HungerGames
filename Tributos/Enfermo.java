@@ -2,6 +2,7 @@ package Tributos;
 
 public class Enfermo {
     public Enfermo(String nombre, int distrito) {
+        super(nombre, distrito);
         Random random = new Random();
         this.agilidad = random.nextInt(3) + 1;
         this.inteligencia = random.nextInt(3) + 1;
