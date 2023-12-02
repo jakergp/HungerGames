@@ -10,11 +10,14 @@ public class Enfrentamiento implements Evento{
         this.tributo1 = tributo1;
         this.tributo2 = tributo2;
     }
+
     @Override
     public void iniciar() {
         Random random = new Random();
         double duelo = random.nextDouble();
-        if (duelo < 0.5) {
+        int suma = tributo1.getCombate() + tributo2.getCombate();
+        double limite = (tributo1.getCombate()) / suma;
+        if (duelo < limite) {
             //TODO: Gana tributo 1
         }
         else {

@@ -1,6 +1,8 @@
 package Tributos;
 
-public class Estratega implements Tributo{
+import java.util.Random;
+
+public class Estratega extends Tributo{
 
     public Estratega (String nombre, int distrito) {
         super(nombre, distrito);
