@@ -1,4 +1,4 @@
-package JuegosDelHambre.Evento;
+package Evento;
 
 public interface Evento {
     public void iniciar();

@@ -1,4 +1,4 @@
-package JuegosDelHambre.Evento;
+package Evento;
 
 import java.util.ArrayList;
 
@@ -10,9 +10,7 @@ public class Desastre implements Evento{
 
     public Desastre(String nombre, ArrayList<Tributo> listaTributos) {
         this.nombre = nombre;
-        for tributo in listaTributos() {
             
-        }   
     }
 
     @Override

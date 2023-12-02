@@ -1,4 +1,4 @@
-package JuegosDelHambre.Evento;
+package Evento;
 
 import Tributos.Tributo;
 import java.util.Random;
@@ -18,7 +18,7 @@ public class Enfrentamiento implements Evento{
         int suma = tributo1.getCombate() + tributo2.getCombate();
         double limite = (tributo1.getCombate()) / suma;
         if (duelo < limite) {
-            //TODO: Gana tributo 1
+            tributo1.morir();
         }
         else {
             //TODO: Gana tributo 2

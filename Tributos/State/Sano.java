@@ -1,5 +1,7 @@
 package Tributos.State;
- 
+
+import Tributos.Tributo;
+
 class Sano implements State{
     private Tributo tributo;
 
@@ -24,10 +26,13 @@ class Sano implements State{
     }
 
     @Override
-    public setTributo(Tributo tributo){
+    public void setTributo(Tributo tributo){
         this.tributo = tributo;
     }
 
+    @Override
+    public int getEstado() {
+        return 2;
+    }
 
-    
 }

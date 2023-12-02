@@ -1,11 +1,11 @@
 package Tributos;
 
 import java.util.Random;
+import Tributos.State.State;
 
 public class Tributo {
 
     private State estado;
-    
     String nombre;
     int distrito;
     int vida;
@@ -21,6 +21,7 @@ public class Tributo {
         this.popularidad = random.nextInt(10) + 1;
         this.vida = 100;
     }
+
     public String getNombre() {
         return nombre;
     }
@@ -38,10 +39,10 @@ public class Tributo {
     }
 
     public int getVida() {
-        return vida;
         if (this.vida == 0) {
             System.out.println("El tributo esta muerto");
         }
+        return vida;
     }
 
     public void setVida(int vida) {
@@ -112,9 +113,28 @@ public class Tributo {
         }
     }
 
-
     public void setState(State estado) {
         this.estado = estado;
+        this.estado.setTributo(this);
+    }
+
+    public void curar() {
+        this.estado.curar();
+    }
+
+    public void herida(){
+        this.estado.herida();
+    }
+
+    public void morir() {
+        this.estado.morir();
+    }
+
+    public int getEstado() {
+        return this.estado.getEstado();
+    }
+
+    public void setTributo(Tributo tributo) {
         this.estado.setTributo(this);
     }
 }
