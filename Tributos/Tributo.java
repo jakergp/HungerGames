@@ -2,6 +2,7 @@ package Tributos;
 
 import java.util.Random;
 import java.io.Serializable;
+import Tributos.State.*;
 
 public class Tributo implements Serializable{
 
@@ -122,7 +123,6 @@ public class Tributo implements Serializable{
         this.estado.setTributo(this);
     }
 
-<<<<<<< HEAD
     public void curar() {
         this.estado.curar();
     }
@@ -142,8 +142,8 @@ public class Tributo implements Serializable{
     public void setTributo(Tributo tributo) {
         this.estado.setTributo(this);
     }
-=======
-  public void display(){
+
+    public void display(){
     System.out.print(this.nombre + "\t");
     System.out.print(this.distrito + "\t");
     System.out.print(this.vida + "\t");
@@ -152,5 +152,4 @@ public class Tributo implements Serializable{
     System.out.print(this.inteligencia + "\t");
     System.out.print(this.combate + "\t");
   }
->>>>>>> 6e050640e64d217b07e0fdbb06bb40dd059ea990
 }
