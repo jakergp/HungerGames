@@ -54,7 +54,7 @@ public class Periodo {
       ArrayList<Evento> eventosMayores = juegos.listaEventosMayores;
       eventos.add(eventosMayores.get(random.nextInt(eventosMayores.size())));
       eventos.add(new Enfrentamiento(juegos));
-      eventos.add(new Donacion());
+      eventos.add(new Donacion(juegos));
 
       return eventos;
    }
