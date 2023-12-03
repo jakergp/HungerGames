@@ -14,7 +14,7 @@ public class Desastre implements Evento{
     public Desastre(String nombre, Juegos observador) {
         Random random = new Random();
         this.nombre = nombre;
-        ArrayList<Tributo> listaT=observador.getTributos();
+        ArrayList<Tributo> listaT = new ArrayList<>(observador.getTributos());
         for (int i=0; i<5; i++){
           int index = random.nextInt(listaT.size());
           this.tributos.add(listaT.get(index));

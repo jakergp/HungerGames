@@ -13,7 +13,7 @@ public class Ataque implements Evento{
   public Ataque(String nombre, Juegos observador){
     this.nombre=nombre;
     Random random=new Random();
-    ArrayList<Tributo> listaT=observador.getTributos();
+    ArrayList<Tributo> listaT = new ArrayList<>(observador.getTributos());
     for (int i=0; i<5; i++){
       int index=random.nextInt(listaT.size());
       this.tributos.add(listaT.get(index));
