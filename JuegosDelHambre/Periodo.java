@@ -10,8 +10,10 @@ public class Periodo {
    private static int diaActual;
    private int hora, dia;
    private ArrayList<Evento> eventos;
+   private Juegos observador;
 
    public Periodo(Juegos juegos) {
+      this.observador = juegos;
       this.eventos = generarEventos(juegos);
       horaActual += 3;
       if (horaActual == 24) {
@@ -57,7 +59,8 @@ public class Periodo {
       return eventos;
    }
 
-   public void iniciarEventos() {
+   public void iniciar() {
+      observador.notificarPeriodo(this);
       for (Evento evento: eventos) {
          evento.iniciar();
       }

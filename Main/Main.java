@@ -43,7 +43,7 @@ public class Main{
         } catch (InputMismatchException e) {
             System.out.println("Se debe ingresar un valor numerico.");
             return leerNumero();
-        } finally {
+        } finally { 
             scanner.close();
         }
     }

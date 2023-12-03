@@ -9,7 +9,6 @@ public class Juegos {
     Periodo periodoActual;
     ArrayList<Tributo> tributos;
     ArrayList<Evento> listaEventosMayores;
-    ArrayList<Evento> listaEventosMenores;
 
     public Juegos(ArrayList<Tributo> tributos) {
        this.tributos = tributos;
@@ -44,7 +43,7 @@ public class Juegos {
 
     public void empezarPeriodo() {
         periodoActual = new Periodo(this);
-        periodoActual.iniciarEventos();
+        periodoActual.iniciar();
         if(tributos.size() > 1) {
             empezarPeriodo();
         }

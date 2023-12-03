@@ -28,7 +28,7 @@ public class Enfrentamiento implements Evento{
         double duelo = random.nextDouble();
         int atributos1 = tributo1.getCombate() + tributo1.getAgilidad() + tributo1.getInteligencia();
         int atributos2 = tributo2.getCombate() + tributo2.getAgilidad() + tributo2.getInteligencia();
-        int suma = atributos1 + atributos2;
+        double suma = atributos1 + atributos2;
         double limite = atributos1 / suma;
         if (duelo < limite){
             observador.notificarMuerte(tributo1, this);
