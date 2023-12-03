@@ -8,9 +8,9 @@ import java.util.*;
 
 public class Main{
     public static void main(String[] args) {
-        ArrayList<Tributo> listaTributos = new ArrayList<Tributo>();
+        ArrayList<Tributo> listaTributos;
         Juegos juegosDelHambre;
-        int op1=0;
+        int op1;
         do{
         
             System.out.println("Bienvenido.");
@@ -35,20 +35,17 @@ public class Main{
     }
 
     public static int leerNumero() {
-        Scanner scanner = new Scanner(System.in);
-        int numero;
-        try {
+        try (Scanner scanner = new Scanner(System.in)) {
+            int numero;
             numero = scanner.nextInt();
             return numero;
         } catch (InputMismatchException e) {
-            System.out.println("Se debe ingresar un valor numerico.");
+            System.out.println("Se debe ingresar un valor numérico.");
             return leerNumero();
-        } finally { 
-            scanner.close();
         }
     }
     public static ArrayList<Tributo> ingresarTributos(){
-        ArrayList<Tributo> tributos = new ArrayList<Tributo>();
+        ArrayList<Tributo> tributos = new ArrayList<>();
         Creador creador = new Creador();
         System.out.println("Bienvenido al registro de tributos.");
         System.out.println("Seleccione:");

@@ -2,9 +2,9 @@ package Evento;
 
 import JuegosDelHambre.Juegos;
 import Tributos.Tributo;
-
 import java.util.ArrayList;
 import java.util.Random;
+
 public class Enfrentamiento implements Evento{
 
     Tributo tributo1, tributo2;
@@ -30,13 +30,15 @@ public class Enfrentamiento implements Evento{
         int atributos2 = tributo2.getCombate() + tributo2.getAgilidad() + tributo2.getInteligencia();
         double suma = atributos1 + atributos2;
         double limite = atributos1 / suma;
-        if (duelo < limite){
+        if (duelo < limite) {
             observador.notificarMuerte(tributo1, this);
             tributo2.setPopularidad(tributo2.getPopularidad() + 1);
+            tributo2.heridaLeve();
         }
         else {
             observador.notificarMuerte(tributo2, this);
             tributo1.setPopularidad(tributo2.getPopularidad() + 1);
+            tributo1.heridaLeve();
         }
     }
 

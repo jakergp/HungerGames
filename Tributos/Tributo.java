@@ -65,7 +65,7 @@ public class Tributo implements Serializable{
     }
 
     public int getAgilidad() {
-        return agilidad;
+        return this.estado.getAgilidad();
     }
 
     public void setAgilidad(int agilidad) {
@@ -77,8 +77,7 @@ public class Tributo implements Serializable{
     }
 
     public int getInteligencia() {
-        return inteligencia;
-    }
+        return this.estado.getInteligencia(); }
 
     public void setInteligencia(int inteligencia) {
         this.inteligencia = inteligencia;
@@ -110,6 +109,10 @@ public class Tributo implements Serializable{
 
     public void herida(){
         this.estado.herida();
+    }
+
+    public void heridaLeve() {
+        this.estado.heridaLeve();
     }
 
     public void morir() {

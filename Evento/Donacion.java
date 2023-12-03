@@ -8,8 +8,7 @@ import JuegosDelHambre.*;
 
 public class Donacion implements Evento {
    
-    private Tributo tributo;
-    private ArrayList<Tributo> tributos; 
+    private ArrayList<Tributo> tributos;
     private Juegos observador;
 
     public Donacion(Juegos observador) {
@@ -26,6 +25,7 @@ public class Donacion implements Evento {
             double aleatorio = random.nextDouble() * 1.5;
             if(aleatorio < probabilidad){
                tributo.curar();
+               observador.notificarDonacion(tributo);
                break; 
             }
         }
@@ -33,7 +33,7 @@ public class Donacion implements Evento {
 
     @Override
     public void mostrar() {
-       System.out.println("Se hizo una donacion a " + tributo.getNombre()); 
+       System.out.println("Se esta realizando una donacion."); 
     }
 }
 

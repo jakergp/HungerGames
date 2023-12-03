@@ -29,20 +29,17 @@ class Herido implements State{
 
     @Override
     public int getCombate(){
-        int combateHerido = (int)(this.tributo.getCombate()*.7);
-        return combateHerido;
+        return (int)(this.tributo.getCombate()*.7);
     }
 
     @Override
     public int getAgilidad(){
-        int agilidadHerido = (int)(this.tributo.getCombate()*.7);
-        return agilidadHerido;
+        return (int)(this.tributo.getAgilidad()*.7);
     }
 
     @Override
     public int getInteligencia(){
-        int inteligenciaHerido = (int)(this.tributo.getCombate()*.7);
-        return inteligenciaHerido;
+        return (int)(this.tributo.getInteligencia()*.7);
     }
 
     @Override
