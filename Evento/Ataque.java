@@ -25,7 +25,7 @@ public class Ataque implements Evento{
     @Override
     public void iniciar() {
       for (Tributo tributo : tributos) {
-        int combate=tributo.getCombate()*0.1;
+        double combate = tributo.getCombate()*0.1;
         if (Math.random()<combate){
           tributo.herida();
         }
@@ -38,7 +38,7 @@ public class Ataque implements Evento{
 
     @Override
     public void mostrar() {
-      System.out.println("Ocurrió un ataque: "+ this.getNombre);
+      System.out.println("Ocurrió un ataque: "+ this.getNombre());
       System.out.println("Los siguientes tributos no sobrevivieron:");
       for (Tributo tributo : muertos) {
         System.out.println(tributo.getNombre());

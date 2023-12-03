@@ -12,11 +12,11 @@ public class Desastre implements Evento{
     Juegos observador;
     
     public Desastre(String nombre, Juegos observador) {
-        Random = new Random();
+        Random random = new Random();
         this.nombre = nombre;
         ArrayList<Tributo> listaT=observador.getTributos();
         for (int i=0; i<5; i++){
-          int index=random.nextInt(listaT.size());
+          int index = random.nextInt(listaT.size());
           this.tributos.add(listaT.get(index));
           listaT.remove(index);
       }
@@ -25,7 +25,7 @@ public class Desastre implements Evento{
     @Override
     public void iniciar() {
       for (Tributo tributo : tributos) {
-        int agilidad=tributo.getAgilidad()*0.1;
+        double agilidad = tributo.getAgilidad() * 0.1;
         if (Math.random()<agilidad){
           tributo.herida();
         }
