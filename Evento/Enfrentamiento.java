@@ -1,32 +1,45 @@
 package Evento;
 
+import JuegosDelHambre.Juegos;
 import Tributos.Tributo;
+
+import java.util.ArrayList;
 import java.util.Random;
 public class Enfrentamiento implements Evento{
 
     Tributo tributo1, tributo2;
+    Juegos observador;
 
-    public Enfrentamiento(Tributo tributo1, Tributo tributo2) {
-        this.tributo1 = tributo1;
-        this.tributo2 = tributo2;
+    public Enfrentamiento(Juegos observador) {
+        Random random = new Random();
+        ArrayList<Tributo> tributos = observador.getTributos();
+        int index1 = random.nextInt(tributos.size());
+        int index2 = random.nextInt(tributos.size());
+        while (index1 == index2) {
+            index2 = random.nextInt(tributos.size());
+        }
+        this.tributo1 = tributos.get(index1);
+        this.tributo2 = tributos.get(index2);
     }
 
     @Override
     public void iniciar() {
         Random random = new Random();
         double duelo = random.nextDouble();
-        int suma = tributo1.getCombate() + tributo2.getCombate();
-        double limite = (tributo1.getCombate()) / suma;
-        if (duelo < limite) {
-            tributo1.morir();
+        int atributos1 = tributo1.getCombate() + tributo1.getAgilidad() + tributo1.getInteligencia();
+        int atributos2 = tributo2.getCombate() + tributo2.getAgilidad() + tributo2.getInteligencia();
+        int suma = atributos1 + atributos2;
+        double limite = atributos1 / suma;
+        if (duelo < limite){
+            observador.notificarMuerte(tributo1, tributo2);
         }
         else {
-            //TODO: Gana tributo 2
+            observador.notificarMuerte(tributo2, tributo1);
         }
     }
 
     @Override
     public void mostrar() {
-        //TODO: Mostrar tributos en el enfrentamiento.
+        System.out.println("Enfrentamiento entre:" + tributo1.getNombre() + " y " + tributo2.getNombre());
     }
 }

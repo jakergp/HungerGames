@@ -21,6 +21,21 @@ class Muerto implements State{
     }
 
     @Override
+    public int getCombate(){
+        return 0;
+    }
+
+    @Override
+    public int getAgilidad(){
+        return 0;
+    }
+
+    @Override
+    public int getInteligencia(){
+        return 0;
+    }
+
+    @Override
     public void setTributo(Tributo tributo) {
         this.tributo = tributo;
     }

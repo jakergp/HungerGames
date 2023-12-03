@@ -23,4 +23,8 @@ public class Desastre implements Evento{
         //TODO: Mostrar Evento
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
 }

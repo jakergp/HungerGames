@@ -26,6 +26,21 @@ class Sano implements State{
     }
 
     @Override
+    public int getCombate(){
+        return this.tributo.getCombate();
+    }
+
+    @Override
+    public int getAgilidad(){
+        return this.tributo.getAgilidad();
+    }
+
+    @Override
+    public int getInteligencia(){
+        return this.tributo.getInteligencia();
+    }
+
+    @Override
     public void setTributo(Tributo tributo){
         this.tributo = tributo;
     }

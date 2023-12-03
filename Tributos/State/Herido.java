@@ -19,12 +19,29 @@ class Herido implements State{
         if (this.tributo.getVida() == 0){
             tributo.setState(new Muerto());
         }
-
     }
 
     @Override
     public void morir(){
         tributo.setState(new Muerto());
+    }
+
+    @Override
+    public int getCombate(){
+        int combateHerido = (int)(this.tributo.getCombate()*.7);
+        return combateHerido;
+    }
+
+    @Override
+    public int getAgilidad(){
+        int agilidadHerido = (int)(this.tributo.getCombate()*.7);
+        return agilidadHerido;
+    }
+
+    @Override
+    public int getInteligencia(){
+        int inteligenciaHerido = (int)(this.tributo.getCombate()*.7);
+        return inteligenciaHerido;
     }
 
     @Override

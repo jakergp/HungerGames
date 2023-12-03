@@ -15,7 +15,7 @@ public class Tributo implements Serializable{
     int inteligencia;
     int combate;
 
-    public Tributo(){
+    public Tributo() {
       
     }
   
@@ -105,7 +105,7 @@ public class Tributo implements Serializable{
     }
 
     public int getCombate() {
-        return combate;
+        return this.estado.getCombate();
     }
 
     public void setCombate(int combate) {
@@ -144,12 +144,12 @@ public class Tributo implements Serializable{
     }
 
     public void display(){
-    System.out.print(this.nombre + "\t");
-    System.out.print(this.distrito + "\t");
-    System.out.print(this.vida + "\t");
-    System.out.print(this.popularidad + "\t");
-    System.out.print(this.agilidad + "\t");
-    System.out.print(this.inteligencia + "\t");
-    System.out.print(this.combate + "\t");
-  }
+        System.out.print(this.nombre + "\t");
+        System.out.print(this.distrito + "\t");
+        System.out.print(this.vida + "\t");
+        System.out.print(this.popularidad + "\t");
+        System.out.print(this.agilidad + "\t");
+        System.out.print(this.inteligencia + "\t");
+        System.out.print(this.combate + "\t");
+    }
 }

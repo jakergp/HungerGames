@@ -8,7 +8,7 @@ import java.io.IOException;
 
 
 public class Creador {
-    public void registrarListaTributos() {
+    public ArrayList<Tributo> registrarListaTributos() {
         //TODO: Registrar lista de 24 tributos y guardarlos en un archivo de objetos.
       ArrayList<Tributo> listaTributos = new ArrayList<Tributo>();
       Tributo tributo1;
@@ -19,13 +19,16 @@ public class Creador {
       }
       try
       {
-        fileOut=new ObjectOutputStream(new FileOutputStream("ListaTributos"));
-        fileOut.writeObject(listaTributos);
-        fileOut.close();
+            fileOut=new ObjectOutputStream(new FileOutputStream("ListaTributos"));
+            fileOut.writeObject(listaTributos);
+            fileOut.close();
+            return listaTributos;
       } catch (FileNotFoundException e){
-          System.out.println("Error:" + e.getMessage());
+            System.out.println("Error:" + e.getMessage());
+            return registrarListaTributos();
       }catch (IOException e){
-        System.out.println("Error: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
+            return registrarListaTributos();
       }
       
     }
@@ -69,7 +72,7 @@ public class Creador {
       
     }
 
-    public ArrayList<Tributo> leerListaTributos() throws IOException, ClassNotFoundException{
+    public ArrayList<Tributo> leerListaTributos() {
         //TODO: Leer archivo de objetos que devuelva la lista de los tributos registrados.
       String nombreArchivo = "ListaTributos";
       ObjectInputStream file;
@@ -81,7 +84,6 @@ public class Creador {
             tributo.display();
         }
         file.close();
-
       } catch (IOException | ClassNotFoundException e) {
          System.out.println("Error: " + e.getMessage());          
       }

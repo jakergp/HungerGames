@@ -1,11 +1,16 @@
 package Main;
 
 import Tributos.*;
+import JuegosDelHambre.*;
+
+import java.io.IOException;
 import java.util.*;
+
 
 public class Main{
     public static void main(String[] args) {
-        ArrayList<Tributo> listaTributos;
+        ArrayList<Tributo> listaTributos = new ArrayList<Tributo>();
+        Juegos juegosDelHambre;
         int op1=0;
         do{
         
@@ -16,8 +21,9 @@ public class Main{
             op1 = leerNumero();
             switch (op1) {
                 case 1:
-                    ingresarTributos();
-
+                    listaTributos = ingresarTributos();
+                    juegosDelHambre = new Juegos(listaTributos);
+                    juegosDelHambre.iniciar();
                     break;
                 case 2:
                     break;
@@ -26,10 +32,6 @@ public class Main{
                     break;
             }
         }while(op1!=2);
-                
-
-
-
         
     }
 
@@ -47,7 +49,8 @@ public class Main{
         }
     }
     public static ArrayList<Tributo> ingresarTributos(){
-        ArrayList<Tributo> tributos;
+        ArrayList<Tributo> tributos = new ArrayList<Tributo>();
+        Creador creador = new Creador();
         System.out.println("Bienvenido al registro de tributos.");
         System.out.println("Seleccione:");
         System.out.println("1) Ingresar tributos manualmente.");
@@ -55,19 +58,14 @@ public class Main{
         int op2 = leerNumero();
         switch (op2) {
             case 1:
-                
-
-                return tributos;
+                tributos = creador.registrarListaTributos();
                 break;
             case 2:
-
-                return tributos;
+				tributos = creador.leerListaTributos();
                 break;
             default:
                 break;
         }
-
-        
-
+        return tributos;
     } 
 }

@@ -1,30 +1,20 @@
 package JuegosDelHambre;
 
 import java.util.ArrayList;
-
+import java.util.Random;
 import Evento.*;
 
 public class Periodo {
 
    private static int horaActual = 12;
    private static int diaActual;
-   private int hora;
+   private int hora, dia;
    private ArrayList<Evento> eventos;
-   private int dia;
+   private Juegos juegos;
 
-   public Periodo(ArrayList<Evento> eventos) {
-      this.eventos = eventos;
-      horaActual += 3;
-      if (horaActual == 24) {
-         horaActual = 0;
-         diaActual++;
-      }
-      this.hora = horaActual;
-      this.dia = diaActual;
-   }
-
-   public Periodo() {
-      this.eventos = generarEventos();
+   public Periodo(Juegos juegos) {
+      this.juegos = juegos;
+      this.eventos = generarEventos(juegos);
       horaActual += 3;
       if (horaActual == 24) {
          horaActual = 0;
@@ -34,7 +24,6 @@ public class Periodo {
       this.dia = diaActual;
    }
    
-
    public int getHora() {
       return hora;
    }
@@ -59,5 +48,20 @@ public class Periodo {
       this.dia = dia;
    }
 
+   public ArrayList<Evento> generarEventos(Juegos juegos) {
+      Random random = new Random();
+      ArrayList<Evento> eventos = new ArrayList<>();
+      ArrayList<Evento> eventosMayores = juegos.listaEventosMayores;
+      eventos.add(eventosMayores.get(random.nextInt(eventosMayores.size())));
+      eventos.add(new Enfrentamiento(juegos));
+      eventos.add(new Donacion());
 
+      return eventos;
+   }
+
+   public void iniciarEventos() {
+      for (Evento evento: eventos) {
+         evento.iniciar();
+      }
+   }
 }
