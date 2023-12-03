@@ -33,7 +33,7 @@ public class Donacion implements Evento {
 
     @Override
     public void mostrar() {
-       System.out.println("Se esta realizando una donacion."); 
+       System.out.println("Se esta realizando una donación.");
     }
 }
 

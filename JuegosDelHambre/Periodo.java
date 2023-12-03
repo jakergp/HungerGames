@@ -28,24 +28,8 @@ public class Periodo {
       return hora;
    }
 
-   public void setHora(int hora) {
-      this.hora = hora;
-   }
-
-   public ArrayList<Evento> getEventos() {
-      return eventos;
-   }
-
-   public void setEventos(ArrayList<Evento> eventos) {
-      this.eventos = eventos;
-   }
-
    public int getDia() {
       return dia;
-   }
-
-   public void setDia(int dia) {
-      this.dia = dia;
    }
 
    public ArrayList<Evento> generarEventos(Juegos juegos) {

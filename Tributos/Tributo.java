@@ -123,10 +123,6 @@ public class Tributo implements Serializable{
         return this.estado.getEstado();
     }
 
-    public void setTributo(Tributo tributo) {
-        this.estado.setTributo(this);
-    }
-
     public void display(){
         System.out.print(this.nombre + "\t");
         System.out.print(this.distrito + "\t");
