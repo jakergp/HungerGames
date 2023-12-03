@@ -1,14 +1,39 @@
 package Evento;
 
+import Tributos.Tributo;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+import JuegosDelHambre.*;
+
 public class Donacion implements Evento {
+   
+    private Tributo tributo;
+    private ArrayList<Tributo> tributos; 
+    private Juegos observador;
+
+    public Donacion(Juegos observador) {
+        this.observador = observador;
+        this.tributos = observador.getTributos();
+    }
+
     @Override
     public void iniciar() {
-        //TODO:
+        Random random = new Random();
+        Collections.shuffle(tributos); 
+        for(Tributo tributo: tributos) {
+            double probabilidad = tributo.getPopularidad() * 0.1;
+            double aleatorio = random.nextDouble() * 1.5;
+            if(aleatorio < probabilidad){
+               tributo.curar();
+               break; 
+            }
+        }
     }
 
     @Override
     public void mostrar() {
-        //TODO:
+       System.out.println("Se hizo una donacion a " + tributo.getNombre()); 
     }
 }
 

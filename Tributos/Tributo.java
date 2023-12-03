@@ -44,21 +44,15 @@ public class Tributo implements Serializable{
     }
 
     public int getVida() {
-        if (this.vida == 0) {
-            System.out.println("El tributo esta muerto");
-        }
         return vida;
     }
 
     public void setVida(int vida) {
-        if (this.vida > 0) {
-            this.vida = vida;
-            if (this.vida > 100){
-                this.vida = 100; 
-            }
+        if (this.vida > 100){
+            this.vida = 100; 
         }
         else {
-            System.out.println("ERROR. El tributo esta muerto");
+            this.vida = vida;
         }
     }
 
@@ -68,12 +62,6 @@ public class Tributo implements Serializable{
 
     public void setPopularidad(int popularidad) {
         this.popularidad = popularidad;
-        if (this.popularidad > 10){
-                this.popularidad = 10; 
-        }
-        else {
-            System.out.println("El numero debe ser entre 1 y 10");
-        }
     }
 
     public int getAgilidad() {
@@ -85,9 +73,7 @@ public class Tributo implements Serializable{
         if (this.agilidad > 10){
                 this.agilidad = 10; 
         }
-        else {
-            System.out.println("El numero debe ser entre 1 y 10");
-        }
+       
     }
 
     public int getInteligencia() {
@@ -98,9 +84,6 @@ public class Tributo implements Serializable{
         this.inteligencia = inteligencia;
         if (this.inteligencia > 10){
                 this.inteligencia = 10; 
-        }
-        else {
-            System.out.println("El numero debe ser entre 1 y 10");
         }
     }
 
@@ -113,9 +96,7 @@ public class Tributo implements Serializable{
         if (this.combate > 10){
                 this.combate = 10; 
         }
-        else {
-            System.out.println("El numero debe ser entre 1 y 10");
-        }
+        
     }
 
     public void setState(State estado) {

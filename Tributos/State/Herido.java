@@ -7,20 +7,21 @@ class Herido implements State{
 
     @Override
     public void curar(){
-        this.tributo.setVida(tributo.getVida()-10);
+        this.tributo.setVida(tributo.getVida()+30);
         if (this.tributo.getVida() >= 30){
             tributo.setState(new Sano());
         }
     }
-
+    
     @Override
     public void herida(){
-        this.tributo.setVida(tributo.getVida()-10);
-        if (this.tributo.getVida() == 0){
-            tributo.setState(new Muerto());
-        }
+        this.tributo.setVida((int)(tributo.getVida()*.5));
     }
 
+    @Override
+    public void heridaLeve(){
+        this.tributo.setVida((int)(tributo.getVida()*.8));
+    }
     @Override
     public void morir(){
         tributo.setState(new Muerto());

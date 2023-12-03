@@ -59,4 +59,8 @@ public class Juegos {
         System.out.println("Dia " + periodo.getDia());
         System.out.println("Hora " + periodo.getHora() + ":00");
     }
+
+    public void notificarDonacion(Tributo tributo) {
+        System.out.println("El tributo " + tributo.getNombre() + " ha recibido una donacion.");
+    }
 }

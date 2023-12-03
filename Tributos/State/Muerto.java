@@ -11,6 +11,9 @@ class Muerto implements State{
     public void herida() {}
 
     @Override
+    public void heridaLeve() {}
+
+    @Override
     public void morir() {}
     
     @Override

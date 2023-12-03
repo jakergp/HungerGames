@@ -8,21 +8,29 @@ class Sano implements State{
     @Override
     public void curar(){
         if (this.tributo.getVida() < 100){
-            this.tributo.setVida(tributo.getVida()+10);
+            this.tributo.setVida(tributo.getVida()+30);
         }
     }
 
     @Override
     public void herida(){
-        this.tributo.setVida(tributo.getVida()-10);
+        this.tributo.setVida((int)(tributo.getVida()*.5));
         if (this.tributo.getVida() <= 30){
             tributo.setState(new Herido());
         }
+    }
 
+    @Override
+    public void heridaLeve(){
+        this.tributo.setVida((int)(tributo.getVida()*.8));
+        if (this.tributo.getVida() <= 30){
+            tributo.setState(new Herido());
+        }
     }
 
     @Override
     public void morir(){
+        tributo.setState(new Muerto());
     }
 
     @Override
