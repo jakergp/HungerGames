@@ -31,15 +31,22 @@ public class Enfrentamiento implements Evento{
         int suma = atributos1 + atributos2;
         double limite = atributos1 / suma;
         if (duelo < limite){
-            observador.notificarMuerte(tributo1, tributo2);
+            observador.notificarMuerte(tributo1, this);
+            tributo2.setPopularidad(tributo2.getPopularidad() + 1);
         }
         else {
-            observador.notificarMuerte(tributo2, tributo1);
+            observador.notificarMuerte(tributo2, this);
+            tributo1.setPopularidad(tributo2.getPopularidad() + 1);
         }
     }
 
     @Override
     public void mostrar() {
         System.out.println("Enfrentamiento entre:" + tributo1.getNombre() + " y " + tributo2.getNombre());
+    }
+
+    @Override
+    public String toString(){
+        return "Enfrentamiento";
     }
 }

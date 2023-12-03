@@ -36,24 +36,24 @@ public class Juegos {
         System.out.println("Comienzan los juegos del hambre.");
         for (i = 0; i < 5; i++) {
             enfrentamiento = new Enfrentamiento(this);
+            enfrentamiento.mostrar();
             enfrentamiento.iniciar();
+        }
+        empezarPeriodo();
+    }
+
+    public void empezarPeriodo() {
+        periodoActual = new Periodo(this);
+        periodoActual.iniciarEventos();
+        if(tributos.size() > 1) {
+            empezarPeriodo();
         }
     }
 
-    public void eliminarTributo (Tributo tributo) {
-
-    }
-
-    public void notificarMuerte(Tributo asesinado, Tributo asesino){
-        System.out.println("El tributo " + asesinado.getNombre() + " fue asesinado por " + asesino.getNombre());
-    }
-
-    public void notificarMuerte(Tributo asesinado, Ataque ataque){
-        System.out.println("El tributo " + asesinado.getNombre() + "  a causa de " + ataque.getNombre());
-    }
-
-    public void notificarMuerte(Tributo asesinado, Desastre desastre){
-        System.out.println("El tributo " + asesinado.getNombre() + "  a causa de " + desastre.getNombre());
+    public void notificarMuerte(Tributo asesinado, Evento evento){
+        asesinado.morir();
+        tributos.remove(asesinado);
+        System.out.println("El tributo " + asesinado.getNombre() + " a causa de: " + evento);
     }
 
     public void notificarPeriodo(Periodo periodo) {

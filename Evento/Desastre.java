@@ -27,4 +27,9 @@ public class Desastre implements Evento{
         return nombre;
     }
 
+    @Override
+    public String toString(){
+        return " " + this.nombre;
+    }
+
 }

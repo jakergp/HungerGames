@@ -6,10 +6,8 @@ import java.io.*;
 import java.util.Scanner;
 import java.io.IOException;
 
-
 public class Creador {
     public ArrayList<Tributo> registrarListaTributos() {
-        //TODO: Registrar lista de 24 tributos y guardarlos en un archivo de objetos.
       ArrayList<Tributo> listaTributos = new ArrayList<Tributo>();
       Tributo tributo1;
       ObjectOutputStream fileOut;
@@ -34,12 +32,11 @@ public class Creador {
     }
 
     public Tributo registrarTributo() {
-       //TODO: El usuario podrá ingresar los datos de un tributo y se registrará.
       Scanner sc = new Scanner(System.in);
       Tributo tributo=new Tributo();
       int tipo;
       do{
-         System.out.println("Selecciona el tipo de tributo:\n1)Cazador\n2)Enfermo\n3)Estratega\n4)Guerrero\n5)Normal");
+        System.out.println("Selecciona el tipo de tributo:\n1)Cazador\n2)Enfermo\n3)Estratega\n4)Guerrero\n5)Normal");
         System.out.print("Opción: ");
         tipo = sc.nextInt();
         if (tipo>5 || tipo<1){
@@ -68,12 +65,11 @@ public class Creador {
           tributo = new Normal(nombre, distrito);
           break;
       }
+      sc.close();
       return tributo;
-      
     }
 
     public ArrayList<Tributo> leerListaTributos() {
-        //TODO: Leer archivo de objetos que devuelva la lista de los tributos registrados.
       String nombreArchivo = "ListaTributos";
       ObjectInputStream file;
       ArrayList<Tributo> listaTributos = new ArrayList<Tributo>();

@@ -10,10 +10,8 @@ public class Periodo {
    private static int diaActual;
    private int hora, dia;
    private ArrayList<Evento> eventos;
-   private Juegos juegos;
 
    public Periodo(Juegos juegos) {
-      this.juegos = juegos;
       this.eventos = generarEventos(juegos);
       horaActual += 3;
       if (horaActual == 24) {
