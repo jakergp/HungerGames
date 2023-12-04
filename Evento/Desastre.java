@@ -12,18 +12,19 @@ public class Desastre implements Evento{
     Juegos observador;
     
     public Desastre(String nombre, Juegos observador) {
-        Random random = new Random();
+        this.observador = observador;
         this.nombre = nombre;
+    }
+
+    @Override
+    public void iniciar() {
+        Random random = new Random();
         ArrayList<Tributo> listaT = new ArrayList<>(observador.getTributos());
         for (int i=0; i<5; i++){
             int index = random.nextInt(listaT.size());
             this.tributos.add(listaT.get(index));
             listaT.remove(index);
         }
-    }
-
-    @Override
-    public void iniciar() {
         for (Tributo tributo: tributos) {
             double agilidad = tributo.getAgilidad() * 0.1;
             if (Math.random()<agilidad){
@@ -38,14 +39,12 @@ public class Desastre implements Evento{
 
     @Override
     public void mostrar() {
-        System.out.println("Ocurrió un desastre" +this.nombre);
-        System.out.println("Tributos que no sobrevivieron: ");
-        for(Tributo tributo: muertos){
-            System.out.println(tributo.getNombre());
-        }
+        System.out.println("\nOcurrió un desastre: " +this.nombre);
     }
 
-    public String getNombre() {
-        return nombre;
+    @Override
+    public String toString(){
+        return  " " + this.nombre;
     }
+
 }

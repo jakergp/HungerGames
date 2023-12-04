@@ -7,40 +7,25 @@ import Tributos.State.*;
 public class Tributo implements Serializable{
 
     private State estado;
-    String nombre;
-    int distrito;
-    int vida;
-    int popularidad;
-    int agilidad;
-    int inteligencia;
-    int combate;
+    public String nombre;
+    public int distrito;
+    public int vida;
+    public int popularidad;
+    public int agilidad;
+    public int inteligencia;
+    public int combate;
 
-    public Tributo() {
-      
-    }
-  
     public Tributo(String nombre, int distrito) {
         Random random = new Random();
         this.nombre = nombre;
         this.distrito = distrito;
         this.popularidad = random.nextInt(10) + 1;
         this.vida = 100;
+        this.setState(new Sano());
     }
 
     public String getNombre() {
         return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getDistrito() {
-        return distrito;
-    }
-
-    public void setDistrito(int distrito) {
-        this.distrito = distrito;
     }
 
     public int getVida() {
@@ -68,34 +53,11 @@ public class Tributo implements Serializable{
         return this.estado.getAgilidad();
     }
 
-    public void setAgilidad(int agilidad) {
-        this.agilidad = agilidad;
-        if (this.agilidad > 10){
-                this.agilidad = 10; 
-        }
-       
-    }
-
     public int getInteligencia() {
         return this.estado.getInteligencia(); }
 
-    public void setInteligencia(int inteligencia) {
-        this.inteligencia = inteligencia;
-        if (this.inteligencia > 10){
-                this.inteligencia = 10; 
-        }
-    }
-
     public int getCombate() {
         return this.estado.getCombate();
-    }
-
-    public void setCombate(int combate) {
-        this.combate = combate;
-        if (this.combate > 10){
-                this.combate = 10; 
-        }
-        
     }
 
     public void setState(State estado) {

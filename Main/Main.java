@@ -35,7 +35,8 @@ public class Main{
     }
 
     public static int leerNumero() {
-        try (Scanner scanner = new Scanner(System.in)) {
+        Scanner scanner = new Scanner(System.in);
+        try {
             int numero;
             numero = scanner.nextInt();
             return numero;
@@ -43,14 +44,15 @@ public class Main{
             System.out.println("Se debe ingresar un valor numérico.");
             return leerNumero();
         }
+
     }
     public static ArrayList<Tributo> ingresarTributos(){
         ArrayList<Tributo> tributos = new ArrayList<>();
         Creador creador = new Creador();
         System.out.println("Bienvenido al registro de tributos.");
         System.out.println("Seleccione:");
-        System.out.println("1) Ingresar tributos manualmente.");
-        System.out.println("2) Seleccionar tributos predeterminados.");
+        System.out.println("1) Ingresar tributos y crear archivo.");
+        System.out.println("2) Seleccionar archivo.");
         int op2 = leerNumero();
         switch (op2) {
             case 1:

@@ -12,6 +12,7 @@ public class Enfrentamiento implements Evento{
 
     public Enfrentamiento(Juegos observador) {
         Random random = new Random();
+        this.observador = observador;
         ArrayList<Tributo> tributos = observador.getTributos();
         int index1 = random.nextInt(tributos.size());
         int index2 = random.nextInt(tributos.size());
@@ -44,11 +45,11 @@ public class Enfrentamiento implements Evento{
 
     @Override
     public void mostrar() {
-        System.out.println("Enfrentamiento entre:" + tributo1.getNombre() + " y " + tributo2.getNombre());
+        System.out.println("\nEnfrentamiento entre: " + tributo1.getNombre() + " y " + tributo2.getNombre());
     }
 
     @Override
     public String toString(){
-        return "Enfrentamiento";
+        return "l enfrentamiento";
     }
 }

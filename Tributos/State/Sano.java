@@ -1,10 +1,12 @@
 package Tributos.State;
 
+import java.io.Serializable;
+
 import Tributos.Tributo;
 
-class Sano implements State{
+public class Sano implements State, Serializable{
     private Tributo tributo;
-
+    
     @Override
     public void curar(){
         if (this.tributo.getVida() < 100){
@@ -15,7 +17,7 @@ class Sano implements State{
     @Override
     public void herida(){
         this.tributo.setVida((int)(tributo.getVida()*.5));
-        if (this.tributo.getVida() <= 30){
+        if (this.tributo.vida <= 30){
             tributo.setState(new Herido());
         }
     }
@@ -23,7 +25,7 @@ class Sano implements State{
     @Override
     public void heridaLeve(){
         this.tributo.setVida((int)(tributo.getVida()*.8));
-        if (this.tributo.getVida() <= 30){
+        if (this.tributo.vida <= 30){
             tributo.setState(new Herido());
         }
     }
@@ -35,17 +37,17 @@ class Sano implements State{
 
     @Override
     public int getCombate(){
-        return this.tributo.getCombate();
+        return this.tributo.combate;
     }
 
     @Override
     public int getAgilidad(){
-        return this.tributo.getAgilidad();
+        return this.tributo.agilidad;
     }
 
     @Override
     public int getInteligencia(){
-        return this.tributo.getInteligencia();
+        return this.tributo.inteligencia;
     }
 
     @Override

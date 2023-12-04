@@ -7,7 +7,7 @@ import Evento.*;
 public class Periodo {
 
    private static int horaActual = 12;
-   private static int diaActual;
+   private static int diaActual = 1;
    private int hora, dia;
    private ArrayList<Evento> eventos;
    private Juegos observador;
@@ -36,16 +36,18 @@ public class Periodo {
       Random random = new Random();
       ArrayList<Evento> eventos = new ArrayList<>();
       ArrayList<Evento> eventosMayores = juegos.listaEventosMayores;
-      eventos.add(eventosMayores.get(random.nextInt(eventosMayores.size())));
+      int index = random.nextInt(eventosMayores.size());
+      eventos.add(eventosMayores.get(index));
       eventos.add(new Enfrentamiento(juegos));
       eventos.add(new Donacion(juegos));
-
+      eventosMayores.remove(index);
       return eventos;
    }
 
    public void iniciar() {
       observador.notificarPeriodo(this);
       for (Evento evento: eventos) {
+         evento.mostrar();
          evento.iniciar();
       }
    }

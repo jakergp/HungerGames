@@ -1,6 +1,7 @@
 package Tributos;
 
 import java.util.Random;
+import Tributos.State.*;
 
 public class Estratega extends Tributo{
 
@@ -10,5 +11,6 @@ public class Estratega extends Tributo{
         this.agilidad = random.nextInt(4) + 2;
         this.inteligencia = random.nextInt(2) + 9;
         this.combate = random.nextInt(4) + 1;
+        this.setState(new Sano());
     }    
 }

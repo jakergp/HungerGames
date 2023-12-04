@@ -15,12 +15,12 @@ class Herido implements State{
     
     @Override
     public void herida(){
-        this.tributo.setVida((int)(tributo.getVida()*.5));
+        this.tributo.setVida((int)(tributo.vida*.5));
     }
 
     @Override
     public void heridaLeve(){
-        this.tributo.setVida((int)(tributo.getVida()*.8));
+        this.tributo.setVida((int)(tributo.vida*.8));
     }
     @Override
     public void morir(){
@@ -29,17 +29,17 @@ class Herido implements State{
 
     @Override
     public int getCombate(){
-        return (int)(this.tributo.getCombate()*.7);
+        return (int)(this.tributo.combate*.7);
     }
 
     @Override
     public int getAgilidad(){
-        return (int)(this.tributo.getAgilidad()*.7);
+        return (int)(this.tributo.agilidad*.7);
     }
 
     @Override
     public int getInteligencia(){
-        return (int)(this.tributo.getInteligencia()*.7);
+        return (int)(this.tributo.inteligencia*.7);
     }
 
     @Override
