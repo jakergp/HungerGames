@@ -2,9 +2,6 @@ package JuegosDelHambre;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import javax.swing.plaf.synth.SynthStyle;
-
 import Tributos.Tributo;
 import Evento.*;
 
