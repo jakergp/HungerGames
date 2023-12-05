@@ -1,4 +1,3 @@
-
 package Tributos.State;
 
 import Tributos.Tributo;

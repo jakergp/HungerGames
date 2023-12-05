@@ -2,9 +2,7 @@ package Main;
 
 import Tributos.*;
 import JuegosDelHambre.*;
-
 import java.util.*;
-
 
 public class Main{
     public static void main(String[] args) {
@@ -46,6 +44,7 @@ public class Main{
         }
 
     }
+
     public static ArrayList<Tributo> ingresarTributos(){
         ArrayList<Tributo> tributos = new ArrayList<>();
         Creador creador = new Creador();
