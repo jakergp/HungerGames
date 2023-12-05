@@ -24,7 +24,7 @@ public class Creador {
             try{
                 fileOut.writeObject(tributo);
             } catch (IOException e) {
-                System.out.println("AAAAAAAAAAAA: " + e.getMessage());
+                System.out.println("Error: " + e.getMessage());
             }
         }
         try {
