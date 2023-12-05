@@ -44,8 +44,8 @@ public class Juegos {
             enfrentamiento = new Enfrentamiento(this);
             enfrentamiento.mostrar();
             enfrentamiento.iniciar();
+            scanner.nextLine();
         }
-        scanner.nextLine();
         empezarPeriodo();
     }
 
