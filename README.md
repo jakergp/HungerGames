@@ -6,4 +6,4 @@ M.I. Edgar Tista García
 
 ---
 
-Project done with the objective to apply all the different subjects reviewed during the Object-Oriented Programming class. This project is done with Java using a Object-Oriented approach.
+Project done with the objective to apply all the different subjects reviewed during the Object-Oriented Programming class. This project is done in Java using a Object-Oriented approach.
