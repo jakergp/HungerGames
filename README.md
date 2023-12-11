@@ -1,7 +1,7 @@
 # HungerGames
 
-Final Project Object-Oriented Programming\ 
-by Arias Hernández Javier, Jaramillo Rodriguez Leslie Citlalli , Mireles Rubio Carina y Salas Hernández Camila Alexandra\
+Final Project Object-Oriented Programming \
+by Arias Hernández Javier, Jaramillo Rodriguez Leslie Citlalli , Mireles Rubio Carina y Salas Hernández Camila Alexandra \
 M.I. Edgar Tista García
 
 ---
