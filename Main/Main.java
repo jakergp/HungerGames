@@ -29,7 +29,6 @@ public class Main{
                     break;
             }
         }while(op1!=2);
-        
     }
 
     public static int leerNumero() {
